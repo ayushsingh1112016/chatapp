@@ -73,7 +73,7 @@ const Login = () => {
           </button>
         )}
       </form>
-      <div className="mt-2 text-sm">
+      <div className="mt-2 text-sm text-black">
         Don't have an account?{" "}
         <Link to={"/signup"} className="text-[#128C7E]">
           Signup here

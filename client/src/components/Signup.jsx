@@ -163,7 +163,7 @@ const Signup = () => {
           </button>
         )}
       </form>
-      <div className="mt-2 text-sm">
+      <div className="mt-2 text-sm text-black">
         Already have an account?{" "}
         <Link to={"/login"} className="text-[#128C7E]">
           Login here
