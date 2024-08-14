@@ -11,18 +11,19 @@ const ChatHeader = ({ selected, setMessages, setContacts, setSelected }) => {
       console.error(error.message);
     }
   };
+
   return (
-    <div className="bg-secondary/30 p-3 flex items-center justify-between rounded-lg">
+    <div className="bg-[#25D366]/20 p-3 flex items-center justify-between rounded-lg">
       <div className="flex items-center justify-center gap-x-4">
         <img
           src={selected.profilePic}
           alt="profilePic"
-          className="h-12 ring-4 rounded-full ring-secondary"
+          className="h-12 ring-4 rounded-full ring-[#25D366]"
         />
         <div className="flex flex-col gap-y-0">
-          <h3 className="text-lg text-primary truncate max-w-[560px]">{selected.fullName}</h3>
+          <h3 className="text-lg text-[#075E54] truncate max-w-[560px]">{selected.fullName}</h3>
           <h5
-            className="text-accent cursor-pointer hover:text-accent/80 transition-all max-w-[460px] truncate"
+            className="text-[#25D366] cursor-pointer hover:text-[#1ebe55] transition-all max-w-[460px] truncate"
             title="Click to copy"
             onClick={handleCopy}
           >
@@ -32,11 +33,11 @@ const ChatHeader = ({ selected, setMessages, setContacts, setSelected }) => {
       </div>
       <div className="dropdown">
         <div tabIndex={0} role="button">
-          <SlOptionsVertical className="text-xl text-accent hover:text-accent/70 transition-all" />
+          <SlOptionsVertical className="text-xl text-[#25D366] hover:text-[#1ebe55] transition-all" />
         </div>
         <ul
           tabIndex={0}
-          className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-44  right-0"
+          className="dropdown-content z-[1] menu p-2 shadow bg-white rounded-box w-44 right-0"
         >
           <li>
             <ClearConversation selected={selected} setMessages={setMessages} />
@@ -78,7 +79,7 @@ const DeleteContact = ({ selected, setSelected, setContacts }) => {
         });
         
         setSelected(null);
-        toast.success("Delete from your contacts");
+        toast.success("Contact deleted");
       } else {
         toast.error("Failed to delete the contact");
       }
@@ -89,14 +90,14 @@ const DeleteContact = ({ selected, setSelected, setContacts }) => {
   return (
     <div className={`flex items-center justify-center relative`}>
       <button
-        className="w-full text-left"
+        className="w-full text-left text-[#25D366] hover:text-[#1ebe55]"
         onClick={() => document.getElementById("delete-contact").showModal()}
       >
         Delete contact
       </button>
       <dialog id="delete-contact" className={`modal`}>
         <div className={`modal-box w-[26rem] max-w-5xl`}>
-          <h3 className="font-semibold text-base mb-4">
+          <h3 className="font-semibold text-base mb-4 text-[#333333]">
             Do you want to delete this contact?
             <span className="text-sm text-warning/60">
               All the messages will be deleted
@@ -104,14 +105,14 @@ const DeleteContact = ({ selected, setSelected, setContacts }) => {
           </h3>
           <div className="flex items-center justify-center gap-x-10">
             <button
-              className={`bg-error text-base-100 text-base px-4 py-1.5 rounded-md font-semibold`}
+              className={`bg-[#d9534f] text-base-100 text-base px-4 py-1.5 rounded-md font-semibold`}
               onClick={handleDelete}
             >
               Delete
             </button>
             <form method="dialog" className="">
               {/* if there is a button, it will close the modal */}
-              <button className="bg-neutral text-base px-4 py-2 rounded-md font-semibold">
+              <button className="bg-[#f8f9fa] text-base px-4 py-2 rounded-md font-semibold text-[#333333]">
                 Cancel
               </button>
             </form>
@@ -147,7 +148,7 @@ const ClearConversation = ({ selected, setMessages }) => {
   return (
     <div className={`flex items-center justify-center relative`}>
       <button
-        className="w-full text-left"
+        className="w-full text-left text-[#25D366] hover:text-[#1ebe55]"
         onClick={() =>
           document.getElementById("clear-conversation").showModal()
         }
@@ -156,19 +157,19 @@ const ClearConversation = ({ selected, setMessages }) => {
       </button>
       <dialog id="clear-conversation" className={`modal`}>
         <div className={`modal-box w-[26rem] max-w-5xl`}>
-          <h3 className="font-semibold text-base mb-4">
+          <h3 className="font-semibold text-base mb-4 text-[#333333]">
             Do you want to clear all the messages?
           </h3>
           <div className="flex items-center justify-center gap-x-10">
             <button
-              className={`bg-error text-base-100 text-base px-4 py-1.5 rounded-md font-semibold`}
+              className={`bg-[#d9534f] text-base-100 text-base px-4 py-1.5 rounded-md font-semibold`}
               onClick={handleClear}
             >
               Clear
             </button>
             <form method="dialog" className="">
               {/* if there is a button, it will close the modal */}
-              <button className="bg-neutral text-base px-4 py-2 rounded-md font-semibold">
+              <button className="bg-[#f8f9fa] text-base px-4 py-2 rounded-md font-semibold text-[#333333]">
                 Cancel
               </button>
             </form>

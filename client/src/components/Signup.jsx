@@ -46,7 +46,7 @@ const Signup = () => {
             type="text"
             placeholder="Full Name"
             value={inputs.fullName}
-            className="input input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
+            className="input text-black input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
           />
         </div>
 
@@ -68,7 +68,7 @@ const Signup = () => {
             type="text"
             placeholder="Choose a username"
             value={inputs.username}
-            className="input input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
+            className="input text-black input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
           />
         </div>
 
@@ -90,7 +90,7 @@ const Signup = () => {
             type="password"
             value={inputs.password}
             placeholder="Choose a password"
-            className="input input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
+            className="input text-black input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
           />
         </div>
 
@@ -110,7 +110,7 @@ const Signup = () => {
             type="password"
             value={inputs.confirmPassword}
             placeholder="Confirm your password"
-            className="input input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
+            className="input text-black input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
           />
         </div>
 
@@ -121,7 +121,7 @@ const Signup = () => {
               id="male"
               type="radio"
               name="gender"
-              className="radio radio-primary checked:bg-[#25D366]"
+              className="  radio radio-primary checked:bg-[#25D366]"
               value={"male"}
             />
             <label

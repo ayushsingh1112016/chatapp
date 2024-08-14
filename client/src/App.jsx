@@ -2,7 +2,6 @@ import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-
 import { Toaster } from "react-hot-toast";
 import Home from "./components/Home";
 import { useAuth } from "./contexts/AuthContext";
@@ -11,8 +10,8 @@ const App = () => {
   const { authUser } = useAuth();
   return (
     <div
-      data-theme="night"
-      className="min-h-screen flex items-center justify-center overflow-hidden"
+      data-theme="dark"
+      className="min-h-screen flex items-center justify-center overflow-hidden bg-[#075E54] text-[#EDEDED]"
     >
       <Routes>
         <Route
@@ -31,9 +30,9 @@ const App = () => {
       <Toaster
         toastOptions={{
           style: {
-            background: "#374151",
+            background: "#25D366", // WhatsApp green for the background
             borderRadius: "32px",
-            color: "#f3e8ff",
+            color: "white", // White text
           },
         }}
       />

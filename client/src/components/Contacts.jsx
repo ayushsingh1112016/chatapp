@@ -58,13 +58,13 @@ const Contact = ({ user, selected, setSelected, indexInArray }) => {
       }}
       className={`flex items-center gap-x-5 py-4 px-6 rounded-md cursor-pointer ${
         selected?._id === userId
-          ? `bg-gradient-to-tr from-secondary to-accent text-black`
-          : `hover:bg-primary/40 bg-neutral`
+          ? `bg-gradient-to-tr from-[#25D366] to-[#128C7E] text-white`
+          : `hover:bg-[#128C7E]/40 bg-[#F0F0F0]`
       }`}
     >
       <div className="h-12 w-12">
         <img
-          className="h-full border-2 rounded-full border-accent"
+          className="h-full border-2 rounded-full border-[#25D366]"
           src={
             profilePic ? profilePic : "https://avatar.iran.liara.run/public/boy"
           }
@@ -77,8 +77,8 @@ const Contact = ({ user, selected, setSelected, indexInArray }) => {
         <span
           className={`text-sm font-bold line-clamp-1 max-w-[320px] ${
             selected && selected._id === userId
-              ? `text-black/50 hover:text-black`
-              : `text-gray-400 hover:text-accent`
+              ? `text-white/50 hover:text-white`
+              : `text-gray-500 hover:text-[#25D366]`
           }`}
           onClick={handleCopy}
         >
@@ -92,7 +92,7 @@ const Contact = ({ user, selected, setSelected, indexInArray }) => {
 const ContactSkeleton = () => {
   return (
     <div
-      className={`flex items-center gap-x-5 py-4 px-4 rounded-md bg-neutral`}
+      className={`flex items-center gap-x-5 py-4 px-4 rounded-md bg-[#F0F0F0]`}
     >
       <div>
         <div className="h-12 w-12 rounded-full skeleton" />

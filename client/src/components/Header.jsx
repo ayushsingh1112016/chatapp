@@ -5,10 +5,10 @@ import { Logout } from "./Logout";
 
 const Header = ({ setSelected, setContacts }) => {
   return (
-    <div className="flex p-4 items-center justify-between">
+    <div className="rounded-xl flex p-4 items-center justify-between bg-[#128C7E] text-white mb-2">
       <div className="flex items-center gap-x-1">
-        <IoSparklesOutline className="text-accent text-xl" />
-        <h1 className="text-2xl text-transparent bg-gradient-to-br from-accent to-primary bg-clip-text font-bold text-center">
+        <IoSparklesOutline className="text-white text-xl" />
+        <h1 className="text-2xl font-bold text-white">
           MERN Chat
         </h1>
       </div>

@@ -12,7 +12,7 @@ const ChatContainer = ({
 }) => {
   const { authUser } = useAuth();
   return (
-    <div className="flex-grow chat-container flex justify-start gap-y-3 px-6 py-5 flex-col-reverse overflow-y-auto overflow-x-hidden">
+    <div className="flex-grow chat-container flex justify-start gap-y-3 px-6 py-5 flex-col-reverse overflow-y-auto overflow-x-hidden bg-[#E5E5E5]">
       {!loading &&
         messages.map((msg, i) => (
           <ChatBubble
@@ -23,8 +23,8 @@ const ChatContainer = ({
             setMessages={setMessages}
           />
         ))}
-      {!loading && messages.length == 0 && (
-        <div className="w-full h-full flex items-center justify-center">
+      {!loading && messages.length === 0 && (
+        <div className="w-full h-full flex items-center justify-center text-[#333333]">
           No messages here.
         </div>
       )}
@@ -41,7 +41,7 @@ const ChatContainer = ({
       )}
       {messages?.length >= 20 && (
         <div
-          className="flex items-center justify-center text-accent hover:text-secondary transition-all cursor-pointer gap-x-2"
+          className="flex items-center justify-center text-[#25D366] hover:text-[#1ebe55] transition-all cursor-pointer gap-x-2"
           onClick={() => loadMore(selected._id.toString())}
         >
           <span>Load older messages</span>
@@ -60,7 +60,7 @@ const ChatBubbleSkeleton = ({ dir }) => {
       <div
         className={`chat-bubble ${
           randomWidths[Math.floor(Math.random() * randomWidths.length)]
-        } skeleton bg-neutral chat-start`}
+        } skeleton bg-[#CCCCCC] chat-start`}
       ></div>
     </div>
   );

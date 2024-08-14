@@ -4,7 +4,6 @@ import { FaEdit } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { toast } from "react-hot-toast";
 
-
 const ChatBubble = ({ msg, selected, authUser, setMessages }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -14,12 +13,12 @@ const ChatBubble = ({ msg, selected, authUser, setMessages }) => {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`chat font-semibold  relative ${
+      className={`chat font-semibold relative ${
         messageOwner ? `chat-end` : `chat-start`
       }`}
     >
       {hovered && (
-        <span className="text-gray-400 absolute bottom-[-16px] text-xs">
+        <span className="text-gray-500 absolute bottom-[-16px] text-xs">
           {getTimeStamp(msg.createdAt)}
         </span>
       )}
@@ -35,8 +34,8 @@ const ChatBubble = ({ msg, selected, authUser, setMessages }) => {
       <div
         className={`relative chat-bubble max-w-[70%] font-light ${
           messageOwner
-            ? `chat-bubble bg-secondary/60 text-gray-50`
-            : `chat-bubble`
+            ? `chat-bubble bg-[#25D366] text-white`
+            : `chat-bubble bg-[#E5E5E5] text-[#000000]`
         }`}
       >
         {edited && (
@@ -96,11 +95,11 @@ const EditMessage = ({ msg, setMessages }) => {
         className=""
         onClick={() => document.getElementById("edit-message").showModal()}
       >
-        <FaEdit className="text-success hover:text-success/80 transition-all text-2xl cursor-pointer" />
+        <FaEdit className="text-[#25D366] hover:text-[#1ebe55] transition-all text-2xl cursor-pointer" />
       </button>
       <dialog id="edit-message" className="modal">
         <div className="modal-box w-[26rem] max-w-5xl">
-          <h3 className="font-semibold text ml-2 mb-4 text-primary">
+          <h3 className="font-semibold text ml-2 mb-4 text-[#25D366]">
             Edit the message
           </h3>
           <div className="flex items-center justify-center gap-x-4">
@@ -108,11 +107,11 @@ const EditMessage = ({ msg, setMessages }) => {
               value={textContent}
               onChange={(e) => setTextContent(e.target.value)}
               onKeyDown={(e) => (e.key === "Enter" ? handleEdit() : {})}
-              className="w-3/4 text-base bg-transparent ring-1 ring-gray-600 focus:ring-primary rounded-md py-2 text-gray-200 px-3 outline-none"
+              className="w-3/4 text-base bg-transparent ring-1 ring-gray-600 focus:ring-[#25D366] rounded-md py-2 text-gray-700 px-3 outline-none"
               placeholder="Edit the text here.."
             />
             <button
-              className="bg-primary text-base-100 text-base px-4 py-2 rounded-md font-semibold"
+              className="bg-[#25D366] text-base-100 text-base px-4 py-2 rounded-md font-semibold"
               onClick={handleEdit}
             >
               Confirm
@@ -121,7 +120,7 @@ const EditMessage = ({ msg, setMessages }) => {
           <div className="modal-action absolute top-[-22px] right-1">
             <form method="dialog">
               {/* if there is a button, it will close the modal */}
-              <button className="p-2 bg-secondary/10 hover:bg-secondary/30 rounded-full text-xl">
+              <button className="p-2 bg-[#e5e5e5] hover:bg-[#d3d3d3] rounded-full text-xl">
                 <IoClose />
               </button>
             </form>
@@ -164,23 +163,23 @@ const DeleteMessage = ({ msg, setMessages }) => {
         className=""
         onClick={() => document.getElementById("delte-message").showModal()}
       >
-        <MdDeleteOutline className="text-3xl text-error hover:text-error/80 transition-all cursor-pointer" />
+        <MdDeleteOutline className="text-3xl text-[#ff5c5c] hover:text-[#e14a4a] transition-all cursor-pointer" />
       </button>
       <dialog id="delte-message" className={`modal`}>
-        <div className={`modal-box w-[26rem] max-w-5xl `}>
-          <h3 className="font-semibold text mb-4 text-white">
+        <div className={`modal-box w-[26rem] max-w-5xl`}>
+          <h3 className="font-semibold text mb-4 text-[#ff5c5c]">
             Do you want to delete this message?
           </h3>
           <div className="flex items-center justify-center gap-x-10">
             <button
-              className={`bg-error hover:bg-error/80 transition-all text-base-100 text-base px-4 py-1.5 rounded-md font-semibold`}
+              className={`bg-[#ff5c5c] hover:bg-[#e14a4a] transition-all text-base-100 text-base px-4 py-1.5 rounded-md font-semibold`}
               onClick={handleDelete}
             >
               Delete
             </button>
             <form method="dialog" className="">
               {/* if there is a button, it will close the modal */}
-              <button className="bg-neutral text-base px-4 py-2 rounded-md font-semibold text-white">
+              <button className="bg-[#e5e5e5] text-base px-4 py-2 rounded-md font-semibold text-[#000000]">
                 Cancel
               </button>
             </form>

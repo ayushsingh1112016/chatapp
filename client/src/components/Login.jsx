@@ -39,7 +39,7 @@ const Login = () => {
             onChange={(e) => setUsername(e.target.value)}
             type="text"
             placeholder="Username"
-            className="input input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
+            className="input text-black input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
           />
         </div>
 
@@ -50,7 +50,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Enter your password"
-            className="input input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
+            className="input text-black input-bordered border-[#25D366] sm:w-[280px] max-w-xs"
             onKeyDown={(e) => {
               if (e.key === "ArrowUp") {
                 if (usernameInputRef.current) {
@@ -68,7 +68,7 @@ const Login = () => {
         )}
         {loading && (
           <button className="bg-[#25D366] font-semibold px-3 py-2 rounded-lg text-white flex items-center justify-center gap-x-3">
-            <span className="loading loading-spinner text-white"></span>
+            <span className="loading loading-spinner text-gray"></span>
             Loading
           </button>
         )}

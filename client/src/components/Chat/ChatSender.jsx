@@ -61,10 +61,10 @@ const ChatSender = ({ selected, setMessages, setContacts }) => {
   };
 
   return (
-    <div className="bg-secondary/30 h-16 max-h-36 flex items-center justify-center gap-x-3 px-5 py-3 relative rounded-lg">
+    <div className="bg-[#25D366]/20 h-16 max-h-36 flex items-center justify-center gap-x-3 px-5 py-3 relative rounded-lg">
       <button onClick={() => setPickerOpen(!pickerOpen)}>
-        {pickerOpen && <IoClose className="text-2xl text-secondary" />}
-        {!pickerOpen && <MdEmojiEmotions className="text-2xl text-primary" />}
+        {pickerOpen && <IoClose className="text-2xl text-[#25D366]" />}
+        {!pickerOpen && <MdEmojiEmotions className="text-2xl text-[#075E54]" />}
       </button>
 
       <div
@@ -92,9 +92,9 @@ const ChatSender = ({ selected, setMessages, setContacts }) => {
           autoComplete="off"
           onChange={(e) => setTextContent(e.target.value)}
           id="text-message"
-          className="py-2 px-2 w-full transition-all bg-transparent ring-1 ring-gray-400 outline-none focus:ring-accent rounded-lg resize-none h-10 text-left"
+          className="py-2 px-2 w-full transition-all bg-transparent ring-1 ring-gray-300 outline-none text-black focus:ring-[#25D366] rounded-lg resize-none h-10 text-left"
         />
-        <button className="text-2xl text-primary hover:text-accent transition-all">
+        <button className="text-2xl text-[#25D366] hover:text-[#1ebe55] transition-all">
           <IoMdSend />
         </button>
       </form>
