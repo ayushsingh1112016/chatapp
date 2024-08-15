@@ -19,7 +19,7 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const socket = io("https://full-stack-chat-app-8kwj.onrender.com/", {
+      const socket = io("https://full-stack-chat-app-8kwj.onrender.com", {
         query: {
           userId: authUser._id,
         },
